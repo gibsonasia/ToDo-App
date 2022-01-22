@@ -20,9 +20,8 @@
             <div class="td_form">
             <form class="ui form" action="/add" method="post">
                 <div class="field">
-                    <label>Todo Title</label>
                     
-                    <input type="text" name="title" placeholder="Enter Todo..."><br>
+                    <input type="text" name="title" placeholder="Enter Task..."><br>
                 </div>
                 <button class="ui White button" type="submit">Add</button>         
 
@@ -36,7 +35,8 @@
             {% for todo in todo_list %}
             <div class="ui_segment">
                 <p class="ui_big_header">{{todo.id }} | {{todo.title }}</p>
-                
+
+                <!--Buttons within task -->
                 <div class="buttons">
                 {% if todo.complete == False %}
                 <span class="ui gray label">Not Complete</span>
@@ -45,7 +45,7 @@
                 {% endif %}
                 
                 
-                <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
+                <a class="ui green button" href="/update/{{ todo.id }}">Update</a>
                 <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
             </div>
             </div>

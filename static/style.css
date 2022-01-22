@@ -1,6 +1,3 @@
-.card{
-
-}
 body{
     background-image: linear-gradient(to bottom right, red, yellow);
 }
@@ -33,6 +30,11 @@ body{
 
 .buttons{
     text-align: center;
+}
+
+.field{
+
+    font-size: 20px;
 }
 
 
