@@ -22,12 +22,13 @@
                     
                     <input type="text" name="title" placeholder="Enter Todo..."><br>
                 </div>
-                <button class="ui blue button" type="submit">Add</button>   
-                 
+                <button class="ui blue button" type="submit">Add</button>         
+
+                    <!--Add button to list page reference to function for url direction-->
+                    <a class="ui green button" href="{{url_for('list1')}}">Home</a>     
             </form>
 
-            <a class="ui green button" href="{{url_for('list1')}}">Home</a>
-            
+
             <hr>
 
             {% for todo in todo_list %}
