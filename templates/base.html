@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Todo App</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
         <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
         <meta name="description" content="">
@@ -15,17 +17,17 @@
         <div style="margin-top: 50px;" class="ui container">
             <h1 class="ui center aligned header">To Do App</h1>
             
-
+            <div class="td_form">
             <form class="ui form" action="/add" method="post">
                 <div class="field">
                     <label>Todo Title</label>
                     
                     <input type="text" name="title" placeholder="Enter Todo..."><br>
                 </div>
-                <button class="ui blue button" type="submit">Add</button>         
+                <button class="ui White button" type="submit">Add</button>         
 
                     <!--Add button to list page reference to function for url direction-->
-                    <a class="ui green button" href="{{url_for('list1')}}">Home</a>     
+                    <a class="ui white button" href="{{url_for('list1')}}">Home</a>     
             </form>
 
 
@@ -33,19 +35,23 @@
 
             {% for todo in todo_list %}
             <div class="ui_segment">
-                <p class="ui big header">{{todo.id }} | {{todo.title }}</p>
-
+                <p class="ui_big_header">{{todo.id }} | {{todo.title }}</p>
+                
+                <div class="buttons">
                 {% if todo.complete == False %}
                 <span class="ui gray label">Not Complete</span>
                 {% else %}
                 <span class="ui green label">Completed</span>
                 {% endif %}
                 
+                
                 <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
                 <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
             </div>
+            </div>
             {% endfor %}
-            
+        
         </div>
+    </div>
     </body>
 </html>
