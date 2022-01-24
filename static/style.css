@@ -15,7 +15,7 @@ body{
     margin-right: auto;
     border-radius: 5px;
     margin-bottom: 1rem;
-    word-break: break-all; /*to keep all words inside of card provided*/
+    -ms-word-wrap: normal; /*to keep all words inside of card provided*/
 }
 
 /*Create hover effect */
